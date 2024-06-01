@@ -65,7 +65,7 @@ It is recommended to add this command to the `scripts` section of your `package.
 ```json
 {
   "scripts": {
-    "pull-sb-components": "storyblok pull-components --space 290824 --path ./src/components"
+    "pull-sb-components": "storyblok pull-components --space SPACE_ID --path ./src/components/"
   }
 }
 ```
@@ -75,14 +75,14 @@ It is recommended to add this command to the `scripts` section of your `package.
 Next, generate TypeScript types based on the downloaded schema. Again, replace `SPACE_ID` with your actual space ID.
 
 ```sh
-storyblok generate-typescript-typedefs --sourceFilePaths ./components.SPACE_ID.json --destinationFilePath ./component-types-sb.d.ts
+storyblok generate-typescript-typedefs --sourceFilePaths ./src/components/components.SPACE_ID.json --destinationFilePath ./src/components/component-types.d.ts --titleSuffix StoryblokType
 ```
 
 Similarly, add this command to the `scripts` section of your `package.json`:
 
 ```json
 "scripts": {
-  "generate-sb-types": "storyblok generate-typescript-typedefs --sourceFilePaths ./components.SPACE_ID.json --destinationFilePath ./component-types-sb.d.ts"
+  "generate-sb-types": "storyblok generate-typescript-typedefs --sourceFilePaths ./src/components/components.SPACE_ID.json --destinationFilePath ./src/components/component-types.d.ts --titleSuffix StoryblokType"
 }
 ```
 
@@ -91,7 +91,7 @@ Similarly, add this command to the `scripts` section of your `package.json`:
 In your components, import the generated types to leverage TypeScript's benefits such as auto-completion and static typing. For example:
 
 ```typescript
-import type { PageStoryblok } from '../component-types-sb';
+import type { PageStoryblok } from "../component-types";
 ```
 
 ### Step 5: Update Scripts After Schema Changes
@@ -105,8 +105,8 @@ Here's an example of how your `scripts` section might look after adding the nece
 ```json
 {
   "scripts": {
-    "pull-sb-components": "storyblok pull-components --space SPACE_ID",
-    "generate-sb-types": "storyblok generate-typescript-typedefs --sourceFilePaths ./components.SPACE_ID.json --destinationFilePath ./component-types-sb.d.ts"
+    "pull-sb-components": "storyblok pull-components --space SPACE_ID --path ./src/components",
+    "generate-sb-types": "storyblok generate-typescript-typedefs --sourceFilePaths ./src/components/components.SPACE_ID.json --destinationFilePath ./src/components/component-types.d.ts --titleSuffix StoryblokType"
   }
 }
 ```

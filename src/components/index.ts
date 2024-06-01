@@ -1,11 +1,13 @@
-import Page from "./Page";
-import Teaser from "./Teaser";
-import Feature from "./Feature";
-import Grid from "./Grid";
+import PageStoryblok from "./PageStoryblok";
+import TeaserStoryblok from "./TeaserStoryblok";
+import FeatureStoryblok from "./FeatureStoryblok";
+import GridStoryblok from "./GridStoryblok";
+import CarouselStoryblok from "./CarouselStoryblok";
 
 export const COMPONENTS = {
-  page: Page,
-  teaser: Teaser,
-  feature: Feature,
-  grid: Grid,
+  carousel: CarouselStoryblok,
+  page: PageStoryblok,
+  teaser: TeaserStoryblok,
+  feature: FeatureStoryblok,
+  grid: GridStoryblok,
 };

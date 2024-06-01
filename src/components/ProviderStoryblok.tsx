@@ -1,8 +1,8 @@
 "use client";
 
-import React, {FunctionComponent} from "react";
-import {storyblokInit, apiPlugin} from "@storyblok/react/rsc";
-import {COMPONENTS} from "./index";
+import React, { FunctionComponent } from "react";
+import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
+import { COMPONENTS } from "./index";
 
 interface StoryblokProviderProps {
   children: React.ReactNode | React.ReactNode[];
@@ -17,8 +17,10 @@ storyblokInit({
   },
 });
 
-const StoryblokProvider: FunctionComponent<StoryblokProviderProps> = ({children,}) => {
+const ProviderStoryblok: FunctionComponent<StoryblokProviderProps> = ({
+  children,
+}) => {
   return children;
 };
 
-export default StoryblokProvider;
+export default ProviderStoryblok;
