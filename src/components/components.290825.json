@@ -4,14 +4,48 @@
       "name": "carousel",
       "display_name": null,
       "created_at": "2024-05-30T12:49:20.042Z",
-      "updated_at": "2024-05-30T12:50:39.696Z",
+      "updated_at": "2024-06-01T07:25:54.778Z",
       "id": 5863380,
       "schema": {
         "carousel_items": {
           "type": "bloks",
-          "display_name": "Carousel Items",
+          "display_name": "Slider content",
           "minimum": 1,
-          "maximum": 14
+          "maximum": 14,
+          "description": "Instead of images you can also use any type of markup and content inside the carousel such as simple text.",
+          "required": true,
+          "restrict_type": "groups",
+          "restrict_components": true,
+          "component_whitelist": [],
+          "component_group_whitelist": ["e11f0b49-1c8f-41e1-8356-377dd10d923d"]
+        },
+        "slideInterval": {
+          "type": "number",
+          "options": [
+            {
+              "_uid": "b407a931-4f4e-4606-a2d0-f68270560719",
+              "name": "slideInterval",
+              "value": "500"
+            }
+          ],
+          "default_value": "3000",
+          "min_options": "100",
+          "max_options": "1000",
+          "use_uuid": true,
+          "min_value": 1000,
+          "max_value": 10000,
+          "steps": 1000,
+          "description": "Use the slideInterval prop to set the interval between slides in milliseconds. The default value is 3000."
+        },
+        "indicators": {
+          "type": "boolean",
+          "description": "Add custom indicators or disable them by passing the indicators prop to the <Carousel> component.",
+          "default_value": false
+        },
+        "pauseOnHover": {
+          "type": "boolean",
+          "default_value": false,
+          "description": "To conditionally pause the carousel on mouse hover (desktop), or touch and hold (mobile), you can use the pauseOnHover property on the <Carousel> component. Default value is false."
         }
       },
       "image": null,
@@ -22,7 +56,7 @@
       "all_presets": [],
       "preset_id": null,
       "real_name": "carousel",
-      "component_group_uuid": null,
+      "component_group_uuid": "e11f0b49-1c8f-41e1-8356-377dd10d923d",
       "color": null,
       "icon": null,
       "internal_tags_list": [
@@ -31,10 +65,9 @@
           "name": "carousel"
         }
       ],
-      "internal_tag_ids": [
-        "44256"
-      ],
-      "content_type_asset_preview": null
+      "internal_tag_ids": ["44256"],
+      "content_type_asset_preview": null,
+      "component_group_name": "Global"
     },
     {
       "name": "feature",
@@ -55,22 +88,27 @@
       "all_presets": [],
       "preset_id": null,
       "real_name": "feature",
-      "component_group_uuid": null,
+      "component_group_uuid": "e11f0b49-1c8f-41e1-8356-377dd10d923d",
       "color": null,
       "icon": null,
       "internal_tags_list": [],
       "internal_tag_ids": [],
-      "content_type_asset_preview": null
+      "content_type_asset_preview": null,
+      "component_group_name": "Global"
     },
     {
       "name": "grid",
       "display_name": null,
       "created_at": "2024-05-30T12:23:53.281Z",
-      "updated_at": "2024-05-30T12:23:53.281Z",
+      "updated_at": "2024-06-01T07:26:08.853Z",
       "id": 5863250,
       "schema": {
         "columns": {
-          "type": "bloks"
+          "type": "bloks",
+          "restrict_type": "groups",
+          "restrict_components": true,
+          "component_whitelist": [],
+          "component_group_whitelist": ["e11f0b49-1c8f-41e1-8356-377dd10d923d"]
         }
       },
       "image": null,
@@ -81,22 +119,55 @@
       "all_presets": [],
       "preset_id": null,
       "real_name": "grid",
-      "component_group_uuid": null,
+      "component_group_uuid": "e11f0b49-1c8f-41e1-8356-377dd10d923d",
       "color": null,
       "icon": null,
       "internal_tags_list": [],
       "internal_tag_ids": [],
-      "content_type_asset_preview": null
+      "content_type_asset_preview": null,
+      "component_group_name": "Global"
     },
     {
       "name": "page",
       "display_name": null,
       "created_at": "2024-05-30T12:23:53.246Z",
-      "updated_at": "2024-05-30T12:23:53.246Z",
+      "updated_at": "2024-06-01T07:24:00.343Z",
       "id": 5863248,
       "schema": {
-        "body": {
-          "type": "bloks"
+        "header": {
+          "type": "bloks",
+          "key": "Header",
+          "pos": 0,
+          "maximum": 4,
+          "restrict_type": "groups",
+          "restrict_components": true,
+          "component_whitelist": [],
+          "component_group_whitelist": ["e11f0b49-1c8f-41e1-8356-377dd10d923d"]
+        },
+        "headline": {
+          "type": "text",
+          "pos": 1,
+          "key": "Headline",
+          "required": true
+        },
+        "main": {
+          "type": "bloks",
+          "pos": 2,
+          "key": "body",
+          "display_name": "Main",
+          "restrict_type": "groups",
+          "restrict_components": true,
+          "component_whitelist": [],
+          "component_group_whitelist": ["e11f0b49-1c8f-41e1-8356-377dd10d923d"]
+        },
+        "footer": {
+          "type": "bloks",
+          "key": "Footer",
+          "pos": 3,
+          "restrict_type": "groups",
+          "restrict_components": true,
+          "component_whitelist": [],
+          "component_group_whitelist": ["e11f0b49-1c8f-41e1-8356-377dd10d923d"]
         }
       },
       "image": null,
@@ -133,12 +204,13 @@
       "all_presets": [],
       "preset_id": null,
       "real_name": "teaser",
-      "component_group_uuid": null,
+      "component_group_uuid": "e11f0b49-1c8f-41e1-8356-377dd10d923d",
       "color": null,
       "icon": null,
       "internal_tags_list": [],
       "internal_tag_ids": [],
-      "content_type_asset_preview": null
+      "content_type_asset_preview": null,
+      "component_group_name": "Global"
     }
   ]
 }
